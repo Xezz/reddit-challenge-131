@@ -41,7 +41,7 @@ public final class ValidatorBuilder {
                 resultValidator = new LowerCaseValidator();
                 break;
             default:
-                throw new UnsupportedOperationException("No implementation know for TestType: " + type.name());
+                throw new UnsupportedOperationException("No implementation known for TestType: " + type.name());
         }
         return resultValidator;
     }
