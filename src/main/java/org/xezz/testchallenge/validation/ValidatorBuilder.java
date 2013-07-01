@@ -16,7 +16,7 @@ public final class ValidatorBuilder {
      * @return fitting Validator to the TestType
      * @throws UnsupportedOperationException if there is no fitting implementation available
      */
-    public static Validator buildTester(TestType type) throws UnsupportedOperationException {
+    public static Validator buildValidator(TestType type) throws UnsupportedOperationException {
         if (type == null) {
             throw new UnsupportedOperationException("No implementation found for null value!");
         }

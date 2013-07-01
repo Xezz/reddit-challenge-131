@@ -14,25 +14,25 @@ import static org.hamcrest.CoreMatchers.is;
  */
 public class ValidatorBuilderTest {
     @Test
-    public void testBuildLowerCaseTester() throws Exception {
-        final Validator validator = ValidatorBuilder.buildTester(TestType.LOWERCASE);
+    public void testBuildLowerCaseValidator() throws Exception {
+        final Validator validator = ValidatorBuilder.buildValidator(TestType.LOWERCASE);
         Assert.assertThat("Returned Validator was of wrong type", validator, is(instanceOf(LowerCaseValidator.class)));
     }
 
     @Test
-    public void testBuildReverseTester() throws Exception {
-        final Validator validator = ValidatorBuilder.buildTester(TestType.REVERSE);
+    public void testBuildReverseValidator() throws Exception {
+        final Validator validator = ValidatorBuilder.buildValidator(TestType.REVERSE);
         Assert.assertThat("Returned Validator was of wrong type", validator, is(instanceOf(ReverseValidator.class)));
     }
 
     @Test
-    public void testBuildUpperCaseTester() throws Exception {
-        final Validator validator = ValidatorBuilder.buildTester(TestType.UPPERCASE);
+    public void testBuildUpperCaseValidator() throws Exception {
+        final Validator validator = ValidatorBuilder.buildValidator(TestType.UPPERCASE);
         Assert.assertThat("Returned Validator was of wrong type", validator, is(instanceOf(UpperCaseValidator.class)));
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void testBuildInvalidTester() throws Exception {
-        ValidatorBuilder.buildTester(null);
+    public void testBuildInvalidValidator() throws Exception {
+        ValidatorBuilder.buildValidator(null);
     }
 }

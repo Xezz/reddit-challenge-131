@@ -16,27 +16,27 @@ public class LowerCaseValidatorTest {
     final static private String VALID_RESULT = INPUT.toLowerCase();
 
     @Test
-    public void testTestInput() throws Exception {
+    public void testValidate() throws Exception {
         Assert.assertThat("Tester did not match on valid inputs", true, is(testee.validate(INPUT, VALID_RESULT)));
     }
 
     @Test
-    public void testTestInputWithUpperCase() throws Exception {
+    public void testValidateWithUpperCase() throws Exception {
         Assert.assertThat("Tester did match on invalid result", false, is(testee.validate(INPUT, INPUT.toUpperCase())));
     }
 
     @Test
-    public void testTestInputWithMixedCase() throws Exception {
+    public void testValidateWithMixedCase() throws Exception {
         Assert.assertThat("Tester did match on mixed case", false, is(testee.validate(INPUT, INPUT)));
     }
 
     @Test
-    public void testTestInputWithShorterLength() throws Exception {
+    public void testValidateWithShorterLength() throws Exception {
         Assert.assertThat("Tester did match on different length Strings (shorter)", false, is(testee.validate(INPUT, INPUT.substring(2).toLowerCase())));
     }
 
     @Test
-    public void testTestInputWithLongerLength() throws Exception {
+    public void testValidateWithLongerLength() throws Exception {
         Assert.assertThat("Tester did match on different length Strings (longer)", false, is(testee.validate(INPUT, (INPUT + INPUT).toLowerCase())));
     }
 }

@@ -16,7 +16,7 @@ public final class InputTester {
      * @throws UnsupportedOperationException if no implementation for the TestType is available
      */
     public static boolean testData(final TestType testType, final String input, final String result) throws UnsupportedOperationException {
-        return ValidatorBuilder.buildTester(testType).validate(input, result);
+        return ValidatorBuilder.buildValidator(testType).validate(input, result);
     }
 
     /**
