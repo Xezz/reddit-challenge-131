@@ -8,7 +8,7 @@ package org.xezz.testchallenge;
 public enum TestType {
     REVERSE(0), UPPERCASE(1), LOWERCASE(2);
 
-    final int type;
+    private final int type;
 
     private TestType(int i) {
         this.type = i;
@@ -16,7 +16,9 @@ public enum TestType {
 
     public static TestType getTypeByValue(final int type) {
         for (TestType t : values()) {
-            if (t.type == type) return t;
+            if (t.type == type) {
+                return t;
+            }
         }
         return null;
     }

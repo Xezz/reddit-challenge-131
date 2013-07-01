@@ -18,4 +18,10 @@ public final class InputTester {
     public static boolean testData(final TestType testType, final String input, final String result) throws UnsupportedOperationException {
         return TesterBuilder.buildTester(testType).testInput(input, result);
     }
+
+    /**
+     * Do not allow to create an instance of this utility class
+     */
+    private InputTester() {
+    }
 }

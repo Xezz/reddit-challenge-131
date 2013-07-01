@@ -7,7 +7,7 @@ package org.xezz.testchallenge.tester;
  */
 public class UpperCaseTester implements Testable {
     @Override
-    public boolean testInput(String input, String result) {
+    public final boolean testInput(String input, String result) {
         if (input == null || result == null) {
             throw new IllegalArgumentException("Null values not allowed!");
         }
