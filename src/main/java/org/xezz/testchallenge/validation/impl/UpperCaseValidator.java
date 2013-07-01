@@ -1,4 +1,6 @@
-package org.xezz.testchallenge.validation;
+package org.xezz.testchallenge.validation.impl;
+
+import org.xezz.testchallenge.validation.Validator;
 
 /**
  * User: Xezz

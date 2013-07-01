@@ -2,6 +2,7 @@ package org.xezz.testchallenge.validation;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.xezz.testchallenge.validation.impl.LowerCaseValidator;
 
 import static org.hamcrest.CoreMatchers.is;
 

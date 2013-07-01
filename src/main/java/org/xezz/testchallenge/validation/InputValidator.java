@@ -1,15 +1,15 @@
-package org.xezz.testchallenge;
+package org.xezz.testchallenge.validation;
 
-import org.xezz.testchallenge.validation.ValidatorBuilder;
+import org.xezz.testchallenge.validation.type.TestType;
 
 /**
  * Test a given input and the expected result on validity
  */
-public final class InputTester {
+public final class InputValidator {
     /**
      * Do not allow to create an instance of this utility class
      */
-    private InputTester() {
+    private InputValidator() {
     }
 
     /**
@@ -21,9 +21,7 @@ public final class InputTester {
      * @return true when the result is correct for the input and the TestType
      * @throws UnsupportedOperationException if no implementation for the TestType is available
      */
-    public static boolean testData(final TestType testType, final String input, final String result) throws UnsupportedOperationException {
+    public static boolean validateData(final TestType testType, final String input, final String result) throws UnsupportedOperationException {
         return ValidatorBuilder.buildValidator(testType).validate(input, result);
     }
-
-
 }

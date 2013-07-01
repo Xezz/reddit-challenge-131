@@ -1,6 +1,9 @@
 package org.xezz.testchallenge.validation;
 
-import org.xezz.testchallenge.TestType;
+import org.xezz.testchallenge.validation.impl.LowerCaseValidator;
+import org.xezz.testchallenge.validation.impl.ReverseValidator;
+import org.xezz.testchallenge.validation.impl.UpperCaseValidator;
+import org.xezz.testchallenge.validation.type.TestType;
 
 /**
  * User: Xezz

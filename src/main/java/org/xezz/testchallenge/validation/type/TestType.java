@@ -1,4 +1,4 @@
-package org.xezz.testchallenge;
+package org.xezz.testchallenge.validation.type;
 
 /**
  * User: Xezz

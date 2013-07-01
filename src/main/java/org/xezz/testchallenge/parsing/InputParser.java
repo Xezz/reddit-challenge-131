@@ -1,7 +1,7 @@
 package org.xezz.testchallenge.parsing;
 
-import org.xezz.testchallenge.InputTester;
-import org.xezz.testchallenge.TestType;
+import org.xezz.testchallenge.validation.InputValidator;
+import org.xezz.testchallenge.validation.type.TestType;
 
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -29,7 +29,7 @@ public final class InputParser {
         final Scanner scanner = new Scanner(inputStream);
         final int amount = scanner.nextInt();
         for (int i = 0; i < amount; i++) {
-            if (InputTester.testData(TestType.getTypeByValue(scanner.nextInt()), scanner.next(), scanner.next())) {
+            if (InputValidator.validateData(TestType.getTypeByValue(scanner.nextInt()), scanner.next(), scanner.next())) {
                 outputStream.println("Good test data");
             } else {
                 outputStream.println("Mismatch! Bad test data");
