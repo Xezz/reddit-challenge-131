@@ -1,4 +1,4 @@
-package org.xezz.testchallenge.tester;
+package org.xezz.testchallenge.validation;
 
 /**
  * User: Xezz
@@ -6,9 +6,9 @@ package org.xezz.testchallenge.tester;
  * Time: 11:54
  * Tests input on lower case equality
  */
-public class LowerCaseTester implements Testable {
+public class LowerCaseValidator implements Validator {
     @Override
-    public final boolean testInput(String input, String result) {
+    public final boolean validate(String input, String result) {
         if (input == null || result == null) {
             throw new IllegalArgumentException("Null values not allowed!");
         }

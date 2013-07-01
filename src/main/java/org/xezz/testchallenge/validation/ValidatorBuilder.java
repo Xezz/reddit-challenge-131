@@ -1,4 +1,4 @@
-package org.xezz.testchallenge.tester;
+package org.xezz.testchallenge.validation;
 
 import org.xezz.testchallenge.TestType;
 
@@ -6,27 +6,27 @@ import org.xezz.testchallenge.TestType;
  * User: Xezz
  * Date: 01.07.13
  * Time: 11:34
- * Builds Testable depending on the TestType
+ * Builds Validator depending on the TestType
  */
-public final class TesterBuilder {
+public final class ValidatorBuilder {
     /**
-     * Builds a suited implementation of Testable
+     * Builds a suited implementation of Validator
      *
-     * @param type that the Testable has to support
-     * @return fitting Testable to the TestType
+     * @param type that the Validator has to support
+     * @return fitting Validator to the TestType
      * @throws UnsupportedOperationException if there is no fitting implementation available
      */
-    public static Testable buildTester(TestType type) throws UnsupportedOperationException {
+    public static Validator buildTester(TestType type) throws UnsupportedOperationException {
         if (type == null) {
             throw new UnsupportedOperationException("No implementation found for null value!");
         }
         switch (type) {
             case REVERSE:
-                return new ReverseTester();
+                return new ReverseValidator();
             case UPPERCASE:
-                return new UpperCaseTester();
+                return new UpperCaseValidator();
             case LOWERCASE:
-                return new LowerCaseTester();
+                return new LowerCaseValidator();
             default:
                 throw new UnsupportedOperationException("No implementation know for TestType: " + type.name());
         }
@@ -35,6 +35,6 @@ public final class TesterBuilder {
     /**
      * No instantiation allowed!
      */
-    private TesterBuilder() {
+    private ValidatorBuilder() {
     }
 }

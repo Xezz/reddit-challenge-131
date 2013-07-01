@@ -1,6 +1,6 @@
 package org.xezz.testchallenge;
 
-import org.xezz.testchallenge.tester.TesterBuilder;
+import org.xezz.testchallenge.validation.ValidatorBuilder;
 
 /**
  * Test a given input and the expected result on validity
@@ -16,7 +16,7 @@ public final class InputTester {
      * @throws UnsupportedOperationException if no implementation for the TestType is available
      */
     public static boolean testData(final TestType testType, final String input, final String result) throws UnsupportedOperationException {
-        return TesterBuilder.buildTester(testType).testInput(input, result);
+        return ValidatorBuilder.buildTester(testType).validate(input, result);
     }
 
     /**
