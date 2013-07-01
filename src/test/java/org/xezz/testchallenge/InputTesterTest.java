@@ -31,4 +31,9 @@ public class InputTesterTest {
     public void testTestDataUpperDoesNotMatch() throws Exception {
         Assert.assertThat("Invalid upper case did match", false, is(InputTester.testData(TestType.UPPERCASE, "One", "one")));
     }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void testTestDataThrowsExceptionWithNull() throws Exception {
+        InputTester.testData(null, "", "");
+    }
 }
