@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class App {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        final Scanner scanner = new Scanner(System.in);
         final int amount = scanner.nextInt();
         for (int i = 0; i < amount; i++) {
             if (InputTester.testData(TestType.getTypeByValue(scanner.nextInt()), scanner.next(), scanner.next())) {

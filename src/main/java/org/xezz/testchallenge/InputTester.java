@@ -7,6 +7,12 @@ import org.xezz.testchallenge.validation.ValidatorBuilder;
  */
 public final class InputTester {
     /**
+     * Do not allow to create an instance of this utility class
+     */
+    private InputTester() {
+    }
+
+    /**
      * Test input on validity depending on the type of the test
      *
      * @param testType operation to test for
@@ -19,9 +25,5 @@ public final class InputTester {
         return ValidatorBuilder.buildValidator(testType).validate(input, result);
     }
 
-    /**
-     * Do not allow to create an instance of this utility class
-     */
-    private InputTester() {
-    }
+
 }

@@ -7,7 +7,7 @@ package org.xezz.testchallenge.validation;
  */
 public class UpperCaseValidator implements Validator {
     @Override
-    public final boolean validate(String input, String result) {
+    public final boolean validate(final String input, final String result) {
         if (input == null || result == null) {
             throw new IllegalArgumentException("Null values not allowed!");
         }

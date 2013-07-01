@@ -11,32 +11,33 @@ import static org.hamcrest.CoreMatchers.is;
  * Time: 12:12
  */
 public class LowerCaseValidatorTest {
-    final static private LowerCaseValidator testee = new LowerCaseValidator();
-    final static private String INPUT = "AxFgHHBB";
-    final static private String VALID_RESULT = INPUT.toLowerCase();
+    private static final String INPUT = "AxFgHHBB";
+    private static final String VALID_RESULT = INPUT.toLowerCase();
+    private final LowerCaseValidator validator = new LowerCaseValidator();
 
     @Test
     public void testValidate() throws Exception {
-        Assert.assertThat("Tester did not match on valid inputs", true, is(testee.validate(INPUT, VALID_RESULT)));
+        Assert.assertThat("Tester did not match on valid inputs", true, is(validator.validate(INPUT, VALID_RESULT)));
     }
 
     @Test
     public void testValidateWithUpperCase() throws Exception {
-        Assert.assertThat("Tester did match on invalid result", false, is(testee.validate(INPUT, INPUT.toUpperCase())));
+        Assert.assertThat("Tester did match on invalid result", false, is(validator.validate(INPUT, INPUT.toUpperCase())));
     }
 
     @Test
     public void testValidateWithMixedCase() throws Exception {
-        Assert.assertThat("Tester did match on mixed case", false, is(testee.validate(INPUT, INPUT)));
+        Assert.assertThat("Tester did match on mixed case", false, is(validator.validate(INPUT, INPUT)));
     }
 
     @Test
     public void testValidateWithShorterLength() throws Exception {
-        Assert.assertThat("Tester did match on different length Strings (shorter)", false, is(testee.validate(INPUT, INPUT.substring(2).toLowerCase())));
+        Assert.assertThat("Tester did match on different length Strings (shorter)", false, is(validator.validate(INPUT, INPUT.substring(2).toLowerCase())));
     }
 
     @Test
     public void testValidateWithLongerLength() throws Exception {
-        Assert.assertThat("Tester did match on different length Strings (longer)", false, is(testee.validate(INPUT, (INPUT + INPUT).toLowerCase())));
+        final String result = (INPUT + INPUT).toLowerCase();
+        Assert.assertThat("Tester did match on different length Strings (longer)", false, is(validator.validate(INPUT, result)));
     }
 }

@@ -10,17 +10,30 @@ public enum TestType {
 
     private final int type;
 
-    private TestType(int i) {
-        this.type = i;
+    /**
+     * Construct a TestType
+     *
+     * @param testType internal value
+     */
+    private TestType(final int testType) {
+        this.type = testType;
     }
 
+    /**
+     * Get a TestType by its int value
+     *
+     * @param type value to look for
+     * @return TestType or null if none exists with that value
+     */
     public static TestType getTypeByValue(final int type) {
-        for (TestType t : values()) {
-            if (t.type == type) {
-                return t;
+        TestType resultType = null;
+        for (TestType testType : values()) {
+            if (testType.type == type) {
+                resultType = testType;
+                break;
             }
         }
-        return null;
+        return resultType;
     }
 
 

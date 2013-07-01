@@ -10,31 +10,38 @@ import org.xezz.testchallenge.TestType;
  */
 public final class ValidatorBuilder {
     /**
+     * No instantiation allowed!
+     */
+    private ValidatorBuilder() {
+    }
+
+    /**
      * Builds a suited implementation of Validator
      *
      * @param type that the Validator has to support
      * @return fitting Validator to the TestType
      * @throws UnsupportedOperationException if there is no fitting implementation available
      */
-    public static Validator buildValidator(TestType type) throws UnsupportedOperationException {
+    public static Validator buildValidator(final TestType type) throws UnsupportedOperationException {
         if (type == null) {
             throw new UnsupportedOperationException("No implementation found for null value!");
         }
+        Validator resultValidator;
         switch (type) {
             case REVERSE:
-                return new ReverseValidator();
+                resultValidator = new ReverseValidator();
+                break;
             case UPPERCASE:
-                return new UpperCaseValidator();
+                resultValidator = new UpperCaseValidator();
+                break;
             case LOWERCASE:
-                return new LowerCaseValidator();
+                resultValidator = new LowerCaseValidator();
+                break;
             default:
                 throw new UnsupportedOperationException("No implementation know for TestType: " + type.name());
         }
+        return resultValidator;
     }
 
-    /**
-     * No instantiation allowed!
-     */
-    private ValidatorBuilder() {
-    }
+
 }
