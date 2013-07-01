@@ -8,6 +8,9 @@ package org.xezz.testchallenge.tester;
 public class ReverseTester implements Testable {
     @Override
     public boolean testInput(String input, String result) {
-        return false;  // FIXME: Implement this method
+        if (input == null || result == null) {
+            throw new IllegalArgumentException("Null values not allowed!");
+        }
+        return result.equals(new StringBuilder(input).reverse().toString());
     }
 }
