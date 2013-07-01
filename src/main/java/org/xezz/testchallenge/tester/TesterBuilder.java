@@ -17,6 +17,9 @@ public final class TesterBuilder {
      * @throws UnsupportedOperationException if there is no fitting implementation available
      */
     public static Testable buildTester(TestType type) throws UnsupportedOperationException {
+        if (type == null) {
+            throw new UnsupportedOperationException("No implementation found for null value!");
+        }
         switch (type) {
             case REVERSE:
                 return new ReverseTester();
